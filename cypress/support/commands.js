@@ -32,11 +32,7 @@ Cypress.Commands.add('sessionLogin', (
   password = Cypress.env('USER_PASSWORD')
 ) => {
 
-  cy.intercept('GET', '**/notes').as('getNotes')
   const login = () => cy.guiLogin(username, password)
   cy.session(username, login)
 
-  cy.wait('@getNotes')
-  cy.contains('h1', 'Your Notes').should('be.visible')
-  cy.contains('a', 'Create a new note').should('be.visible')
 })

@@ -1,12 +1,13 @@
 {
-  "name": "testes-e2e-com-cypress",
+  "name": "Testes-End-to-End-Cypress",
   "version": "1.0.0",
   "description": "TBD.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint cypress/**/*.js && eslint cypress.config.js",
     "lint:fix": "eslint cypress/**/*.js --fix && eslint cypress.config.js --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run --reporter nyan",
+    "cy:open": "cypress open"
   },
   "keywords": [],
   "author": "",

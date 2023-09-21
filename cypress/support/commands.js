@@ -14,3 +14,29 @@ Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
     cy.wait('@getNotes')
   })
 })
+
+Cypress.Commands.add('guiLogin', (
+
+  username = Cypress.env('USER_EMAIL'),
+  password= Cypress.env('USER_PASSWORD')
+) => {
+  cy.visit('/login')
+  cy.get('#email').should('be.visible').type(username)
+  cy.get('#password').should('be.visible').type(password),{log:false}
+  cy.contains('button', 'Login').should('be.visible').click()
+
+})
+
+Cypress.Commands.add('sessionLogin', (
+  username = Cypress.env('USER_EMAIL'),
+  password = Cypress.env('USER_PASSWORD')
+) => {
+
+  cy.intercept('GET', '**/notes').as('getNotes')
+  const login = () => cy.guiLogin(username, password)
+  cy.session(username, login)
+
+  cy.wait('@getNotes')
+  cy.contains('h1', 'Your Notes').should('be.visible')
+  cy.contains('a', 'Create a new note').should('be.visible')
+})

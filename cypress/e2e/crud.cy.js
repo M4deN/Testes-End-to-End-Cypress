@@ -7,7 +7,7 @@ describe('CRUD', () => {
 
     cy.intercept('GET', '**/notes').as('getNotes')
     cy.intercept('GET', '**/notes/**').as('getNote')
-    cy.sessionLogin()
+    cy.guiLogin()
 
     cy.visit('/notes/new')
     cy.get('#content').type(noteDescription)

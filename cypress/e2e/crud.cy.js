@@ -1,5 +1,3 @@
-// cypress/e2e/crud.cy.js
-
 import { faker } from '@faker-js/faker/locale/en'
 
 describe('CRUD', () => {

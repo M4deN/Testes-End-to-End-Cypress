@@ -16,15 +16,16 @@ Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
 })
 
 Cypress.Commands.add('guiLogin', (
-
   username = Cypress.env('USER_EMAIL'),
-  password= Cypress.env('USER_PASSWORD')
+  password = Cypress.env('USER_PASSWORD')
 ) => {
+  cy.intercept('GET', '**/notes').as('getNotes')
   cy.visit('/login')
-  cy.get('#email').should('be.visible').type(username)
-  cy.get('#password').should('be.visible').type(password),{log:false}
-  cy.contains('button', 'Login').should('be.visible').click()
-
+  cy.get('#email').type(username)
+  cy.get('#password').type(password, { log: false })
+  cy.contains('button', 'Login').click()
+  cy.wait('@getNotes')
+  cy.contains('h1', 'Your Notes').should('be.visible')
 })
 
 Cypress.Commands.add('sessionLogin', (
@@ -33,4 +34,54 @@ Cypress.Commands.add('sessionLogin', (
 ) => {
   const login = () => cy.guiLogin(username, password)
   cy.session(username, login)
+})
+
+const attachFileHandler = () => {
+  cy.get('#file').selectFile('cypress/fixtures/example.json')
+}
+
+Cypress.Commands.add('createNote', (note, attachFile = false) => {
+  cy.visit('/notes/new')
+  cy.get('#content').type(note)
+
+  if (attachFile) {
+    attachFileHandler()
+  }
+
+  cy.contains('button', 'Create').click()
+
+  cy.contains('.list-group-item', note).should('be.visible')
+})
+
+Cypress.Commands.add('editNote', (note, newNoteValue, attachFile = false) => {
+  cy.intercept('GET', '**/notes/**').as('getNote')
+
+  cy.contains('.list-group-item', note).click()
+  cy.wait('@getNote')
+
+  cy.get('#content')
+    .as('contentField')
+    .clear()
+  cy.get('@contentField')
+    .type(newNoteValue)
+
+  if (attachFile) {
+    attachFileHandler()
+  }
+
+  cy.contains('button', 'Save').click()
+
+  cy.contains('.list-group-item', newNoteValue).should('be.visible')
+  cy.contains('.list-group-item', note).should('not.exist')
+})
+
+Cypress.Commands.add('deleteNote', note => {
+  cy.contains('.list-group-item', note).click()
+  cy.contains('button', 'Delete').click()
+
+  cy.get('.list-group-item')
+    .its('length')
+    .should('be.at.least', 1)
+  cy.contains('.list-group-item', note)
+    .should('not.exist')
 })

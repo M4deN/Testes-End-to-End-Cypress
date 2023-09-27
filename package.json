@@ -8,7 +8,9 @@
     "lint:fix": "eslint cypress/**/*.js --fix && eslint cypress.config.js --fix",
     "test": "cypress run --reporter nyan",
     "cy:open": "cypress open",
-    "test:tablet": "cypress run --config viewportWidth=767,viewportHeight=480"
+    "test:tablet": "cypress run --config viewportWidth=767,viewportHeight=480 --spec cypress/e2e/authenticated.cy.js",
+    "test:cloud": "cypress run --record --tag 'desktop'",
+    "test:tablet:cloud": "cypress run --record --tag 'tablet' --config viewportWidth=767,viewportHeight=480 --spec cypress/e2e/authenticated.cy.js"
   },
   "keywords": [],
   "author": "",

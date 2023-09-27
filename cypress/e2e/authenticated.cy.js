@@ -33,7 +33,7 @@ describe('Scenarios where authentication is a pre-condition', () => {
       .should('be.equal', 'Complete')
   })
 
-  it('logs out', () => {
+  it('logs out', { tags: '@desktop-and-tablet' }, () => {
     cy.visit('/')
     cy.wait('@getNotes')
     if (Cypress.config('viewportWidth') < Cypress.env('viewportWidthBreakpoint')) {
@@ -41,7 +41,6 @@ describe('Scenarios where authentication is a pre-condition', () => {
         .should('be.visible')
         .click()
     }
-
     cy.contains('.nav a', 'Logout').click()
     cy.get('#email').should('be.visible')
   })

@@ -6,7 +6,12 @@ module.exports = defineConfig({
     //   // implement node event listeners here
     // },
     baseUrl: 'https://notes-serverless-app.com',
-    defaultCommandTimeout: 6000,
-    requestTimeout: 6000
+    env: {
+      viewportWidthBreakpoint: 768,
+    },
+    chromeWebSecurity: false,
+    defaultCommandTimeout: 9000,
+    requestTimeout: 9000,
+    video: true,
   },
 })

@@ -34,6 +34,8 @@ Run `npm test` (or `npm t` for short) to run all tests in headless mode using a 
 
 Run `npm run test:tablet` to run the appropriate tests in headless mode using a tablet viewport.
 
+
+
 ### Interactive mode
 
 Run `npm run cy:open` to open the __Cypress App__ to run tests in interactive mode using a desktop viewport.
@@ -42,4 +44,18 @@ Run `npm run cy:open:tablet` to open the __Cypress App__ to run tests in interac
 
 ___
 
-Made with ❤️ by [Alecio L. Medeiros](https://github.com/M4deN).
+#### Example
+
+Here's an example of running all the tests in interactive mode.
+
+authenticated.cy.js
+
+login.cy.js
+
+signup.cy.js
+
+
+
+___
+
+Made with by [Alecio L. Medeiros](https://github.com/M4deN).

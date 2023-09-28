@@ -1,7 +1,7 @@
 {
   "name": "Testes-End-to-End-Cypress",
   "version": "1.0.0",
-  "description": "TBD.",
+  "description": "Sample project to demonstrate e2e tests written with Cypress running on GitHub Actions",
   "main": "cypress.config.js",
   "scripts": {
     "lint": "eslint cypress/**/*.js && eslint cypress.config.js",

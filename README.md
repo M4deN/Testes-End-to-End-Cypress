@@ -48,12 +48,19 @@ ___
 
 Here's an example of running all the tests in interactive mode.
 
-authenticated.cy.js
+#### authenticated.cy.js
 
-login.cy.js
+https://github.com/M4deN/Testes-End-to-End-Cypress/assets/43422425/64625b37-283d-44ae-a63e-713d5bc8fda7
 
-signup.cy.js
 
+#### login.cy.js
+
+https://github.com/M4deN/Testes-End-to-End-Cypress/assets/43422425/b3602f1d-e838-456b-95fe-73cfd5ed7644
+
+
+#### signup.cy.js
+
+https://github.com/M4deN/Testes-End-to-End-Cypress/assets/43422425/22f85892-0999-47ac-ab5a-d3462ce6d65f
 
 
 ___

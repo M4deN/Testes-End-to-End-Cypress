@@ -1,5 +1,7 @@
 # End-to-end Testing with Cypress
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/M4deN/Testes-End-to-End-Cypress/ci.yml?label=Test%20Workflows&logo=GitHub&style=for-the-badge)
+
 Sample project to demonstrate end-to-end (e2e) tests written with [Cypress](https://cypress.io) running on GitHub Actions.
 
 ## Pre-requirements

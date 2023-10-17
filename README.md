@@ -2,58 +2,55 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/M4deN/Testes-End-to-End-Cypress/ci.yml?label=Test%20Workflows&logo=GitHub&style=for-the-badge)
 
-Sample project to demonstrate end-to-end (e2e) tests written with [Cypress](https://cypress.io) running on GitHub Actions.
+Projeto de exemplo para demonstrar testes end-to-end (e2e) escritos com [Cypress](https://cypress.io) em execução no GitHub Actions.
 
-## Pre-requirements
+## Pré requisitos
 
-To clone and run this project, you will need:
+Para clonar e executar este projeto, você precisará de:
 
-- [git](https://git-scm.com/downloads) (I've used version `2.34.1` while writing this doc)
-- [Node.js](https://nodejs.org/en/) (I've used version `v18.15.0` while writing this doc)
-- npm (I've used version `9.5.0` while writing this doc)
+- [git](https://git-scm.com/downloads) (usei a versão `2.34.1` enquanto escrevia este documento)
+- [Node.js](https://nodejs.org/en/) (usei a versão `v18.15.0` ao escrever este documento)
+- npm (usei a versão `9.5.0` ao escrever este documento)
 
-**Note:** When installing Node.js, npm is automatically installed. 🚀
+**Observação:** Ao instalar o Node.js, o npm é instalado automaticamente. 🚀
 
-## Installation
+## Instalação
 
-To install the dev dependencies, run `npm install` (or `npm i` for short.)
+Para instalar as dependências de desenvolvimento, execute `npm install` (ou `npm i` para abreviar).
 
-## Configuring the environment variables
+## Configurando as variáveis ​​de ambiente
 
-Before running the tests, some environment variables need to be set up.
+Antes de executar os testes, algumas variáveis ​​de ambiente precisam ser configuradas.
 
-Make a copy of the [`cypress.env.example.json`](./cypress.env.example.json) file as `cypress.env.json`, and set the appropriate values for all the variables.
+Faça uma cópia do arquivo [`cypress.env.example.json`](./cypress.env.example.json) como `cypress.env.json` e defina os valores apropriados para todas as variáveis.
 
-**Note:** The `cypress.env.json` file is not tracked by git since it's listed in the `.gitignore` file.
+**Nota:** O arquivo `cypress.env.json` não é rastreado pelo git, pois está listado no arquivo `.gitignore`.
 
-## Running the tests
+## Executando os testes
 
-In this project, you can run tests in interactive and headless modes, both on desktop and tablet viewports.
+Neste projeto, você pode executar testes nos modos interativo e headless, tanto em viewports de desktop quanto de tablets.
 
-### Headless mode
+### Modo sem cabeça
 
-Run `npm test` (or `npm t` for short) to run all tests in headless mode using a desktop viewport.
+Execute `npm test` (ou `npm t` para abreviar) para executar todos os testes no modo headless usando uma janela de visualização de desktop.
 
-Run `npm run test:tablet` to run the appropriate tests in headless mode using a tablet viewport.
+Execute `npm run test:tablet` para executar os testes apropriados no modo headless usando uma janela de visualização de tablet.
 
+### Modo interativo
 
+Execute `npm run cy:open` para abrir o __Cypress App__ para executar testes em modo interativo usando uma janela de visualização de desktop.
 
-### Interactive mode
-
-Run `npm run cy:open` to open the __Cypress App__ to run tests in interactive mode using a desktop viewport.
-
-Run `npm run cy:open:tablet` to open the __Cypress App__ to run tests in interactive mode using a tablet viewport.
+Execute `npm run cy:open:tablet` para abrir o __Cypress App__ para executar testes em modo interativo usando uma janela de visualização de tablet.
 
 ___
 
-#### Example
+#### Exemplo
 
-Here's an example of running all the tests in interactive mode.
+Aqui está um exemplo de execução de todos os testes no modo interativo.
 
 #### authenticated.cy.js
 
 https://github.com/M4deN/Testes-End-to-End-Cypress/assets/43422425/64625b37-283d-44ae-a63e-713d5bc8fda7
-
 
 #### login.cy.js
 
@@ -64,7 +61,12 @@ https://github.com/M4deN/Testes-End-to-End-Cypress/assets/43422425/b3602f1d-e838
 
 https://github.com/M4deN/Testes-End-to-End-Cypress/assets/43422425/22f85892-0999-47ac-ab5a-d3462ce6d65f
 
-
 ___
 
 Made with by [Alecio L. Medeiros](https://github.com/M4deN).
+
+---
+
+## Licença
+
+Este projeto está sob a licença MIT - [LICENSE](LICENSE) para mais detalhes.

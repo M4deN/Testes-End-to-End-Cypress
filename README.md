@@ -6,17 +6,17 @@ Projeto de exemplo para demonstrar testes end-to-end (e2e) escritos com [Cypress
 
 ## Pré requisitos
 
-Para clonar e executar este projeto, você precisará de:
+Para clonar e executar este projeto:
 
-- [git](https://git-scm.com/downloads) (usei a versão `2.34.1` enquanto escrevia este documento)
-- [Node.js](https://nodejs.org/en/) (usei a versão `v18.15.0` ao escrever este documento)
-- npm (usei a versão `9.5.0` ao escrever este documento)
+- [git](https://git-scm.com/downloads) (Versão `2.34.1`)
+- [Node.js](https://nodejs.org/en/) (Versão `v18.15.0`)
+- npm (Versão `9.5.0`)
 
 **Observação:** Ao instalar o Node.js, o npm é instalado automaticamente. 🚀
 
 ## Instalação
 
-Para instalar as dependências de desenvolvimento, execute `npm install` (ou `npm i` para abreviar).
+Para instalar as dependências de desenvolvimento, execute `npm install` (ou `npm i`).
 
 ## Configurando as variáveis ​​de ambiente
 
@@ -30,9 +30,9 @@ Faça uma cópia do arquivo [`cypress.env.example.json`](./cypress.env.example.j
 
 Neste projeto, você pode executar testes nos modos interativo e headless, tanto em viewports de desktop quanto de tablets.
 
-### Modo sem cabeça
+### Modo Headless
 
-Execute `npm test` (ou `npm t` para abreviar) para executar todos os testes no modo headless usando uma janela de visualização de desktop.
+Execute `npm test` (ou `npm t`) para executar todos os testes no modo headless usando uma janela de visualização de desktop.
 
 Execute `npm run test:tablet` para executar os testes apropriados no modo headless usando uma janela de visualização de tablet.
 

@@ -69,4 +69,4 @@ Made with by [Alecio L. Medeiros](https://github.com/M4deN).
 
 ## Licença
 
-Este projeto está sob a licença MIT - [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença MIT - [LICENSE](LICENSE).
